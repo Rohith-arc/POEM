@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Poem</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .heart {
+            margin-top: 20px;
+            font-size: 2em;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        #reveal {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        #reveal:hover {
+            background: #ff3b2d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SORRY LADDOOO MAAA</h1>
+        <p id="poem-line">Click the button below to reveal the poem.</p>
+        <button id="reveal">Reveal Poem</button>
+        <div class="heart">❤️🌎💋</div>
+    </div>
+
+    <script>
+        const poemLines = [
+            "I'm Sorry for the things I've done,",
+            "They made us drift and made us run.",
+            "I never thought we'd be this far,",
+            "Now I'm lost, beneath a distant Star.",
+            "",
+            "I thought you'd forgive, hold me tight,",
+            "Like before when everything felt right.",
+            "But nothing turned out as I had planned",
+            "And happiness feels out of my hand.",
+            "",
+            "Though my words may not sound like art,",
+            "Know that you are the one who owns my heart.",
+            "After my MOM, you are the one I adore,",
+            "The one who cared and still, I implore.",
+            "",
+            "I fought with you, just like with her,",
+            "But now I see you were right for sure.",
+            "I hope after this pain and strife,",
+            "We'll find the joy, the love, the life.",
+            "",
+            "Don't think I left, I'm always near,",
+            "Your fighter, your strength, forever here.",
+            "As your MOM, DAD, SISTER, your lovable GRANDMA & GRANDPA and FRIEND,",
+            "My love for you will never end."
+        ];
+
+        const revealButton = document.getElementById("reveal");
+        const poemLine = document.getElementById("poem-line");
+        let lineIndex = 0;
+
+        revealButton.addEventListener("click", () => {
+            if (lineIndex < poemLines.length) {
+                poemLine.textContent = poemLines[lineIndex];
+                lineIndex++;
+            } else {
+                poemLine.textContent = "Thank you for reading this poem.";
+                revealButton.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
